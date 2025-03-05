@@ -60,6 +60,7 @@
       <div class="columns is-centered">
         <div class="column has-text-centered">
           <h1 class="title is-1 publication-title">ShipNaviSim: Data-Driven Simulation for Real-World Maritime Navigation</h1>
+          
           <div class="is-size-5 publication-authors">
             <span class="author-block">
               <a href="https://quanganh1999.github.io">Quang Anh Pham</a><sup>1</sup>,</span>
@@ -128,11 +129,23 @@
 
           </div>
         </div>
+        <div class="venue" style="font-size:24px">
+            AAMAS 2025
+          </div>
       </div>
     </div>
   </div>
 </section>
-
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="./static/images/shipnavisim.png" alt="shipnavisim image" width="100%" height="auto">
+      <h2 class="subtitle has-text-centered">
+        We utilize over 2-year AIS data recorded in Singapore Straits to build ShipNaviSim
+      </h2>
+    </div>
+  </div>
+</section>
 <section class="section">
   <div class="container is-max-desktop">
     <!-- Abstract. -->
@@ -233,29 +246,209 @@
         <h2 class="title is-3">Demo Videos</h2>
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">COMING SOON</h3>
-        <!-- <div class="content has-text-justified">
+      <!-- <h3 class="title is-4">       
+          We provided some videos showing vessel trajectories when deploying our learned Behavior Cloning (BC) policy in ShipNaviSim. Here are some notion
+        <p>Here are some notions:</p>
+          <ul>
+            <li><font color=blue>Blue vessels</font> follow static AIS logs</li>
+            <li><font color=red>Red line</font> shows BC policy path</li>
+            <li><font color=green>Green line</font> represents reference trajectory</li>
+            <li><font color=green>Green point</font> marks the goal destination</li>
+          </ul> 
+        </h3> 
+         We provided some videos showing vessel trajectories when deploying our learned Behavior Cloning (BC) policy in ShipNaviSim: <font color=blue>blue vessels</font> follow static AIS logs, <font color=red>red line</font> shows BC policy path, <font color=green> green line</font>  represents reference trajectory, and <font color=green>green point</font> marks the goal destination. --> 
+        <div class="content has-text-centered">
+          <img src="./static/images/net_arc.jpeg" alt="BC policy arc image" width="75%" height="auto">
+         <div class="content has-text-centered">
+            BC policy architecture
+         </div>
+        </div>
+        <div class="content has-text-justified">
           <p>
-            Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
-            viewpoint such as a stabilized camera by playing back the training deformations.
+            We provided some videos showing vessel trajectories when deploying our learned <b>Behavior Cloning (BC)</b> policy in ShipNaviSim. 
+            <ul>
+              <li><font color=blue>Blue vessels</font> follow static AIS logs.</li>
+              <li><font color=red>Red line</font> shows BC policy path.</li>
+              <li><font color=green>Green line</font> represents reference trajectory.</li>
+              <li><font color=yellow>Yellow star</font> marks the goal destination.</li>
+            </ul>  
           </p>
         </div>
-        <div class="content has-text-centered">
-          <video id="replay-video"
-                 controls
-                 muted
-                 preload
-                 playsinline
-                 width="75%">
-            <source src="./static/videos/replay.mp4"
-                    type="video/mp4">
-          </video>
-        </div> -->
-        <!--/ Re-rendering. -->
+        <h3 class="title is-4">Single-agent scenarios </h3> 
+        BC policy can control the ego vessel smoother than in log data while reaching the goal at the same time or faster (Scenarios 1 and 2). 
+        It also can make safer decisions to avoid near misses (Scenarios 3-5).
+        <!-- Two-column video layout -->
+        <div class="columns is-multiline">
+          <!-- Video 1 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 1</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/scene1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 2 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 2</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/scene2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 3 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 3</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/scene3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 4 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 4</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/scene5.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 5 (Full width or centered in a column) -->
+          <div class="column is-half is-offset-one-quarter">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 5</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/scene6.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <h3 class="title is-4">Multi-agent scenarios </h3> 
+        <p>
+          In multi-agent setting, all vessels in the planning area at the first step are controlled by BC policy. The videos stop when all agents reach their goals.
+        </p>
+         <!-- Two-column video layout -->
+         <div class="columns is-multiline">
+          <!-- Video 1 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 1</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/MA-scene1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 2 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 2</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/MA-scene2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 3 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 3</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/MA_scene3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 4 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 4</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/MA_scene4.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 5 (Full width or centered in a column) -->
+          <div class="column is-half is-offset-one-quarter">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">Scenario 5</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/MA_scene5.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+        </div>
+        <h3 class="title is-4">The importance of ship-interaction features </h3> 
+        We show visualizations that show learned policy, which does not take nearby vessel information as input, causes many unsafe scenarios.
+        <div class="columns is-multiline">
+          <!-- Video 1 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">BC without nearby-vessel features </p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/BC-drop-scene1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 2 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">BC</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/BC-nondrop-scene1.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 3 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">BC without nearby-vessel features</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/BC-drop-scene2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 4 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">BC</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/BC-nondrop-scene2.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
 
-      </div>
-    </div>
-    <!--/ Animation. -->
+
+          <!-- Video 5 (Column 1) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">BC without nearby-vessel features</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/BC-drop-scene3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
+          <!-- Video 6 (Column 2) -->
+          <div class="column is-half">
+            <div class="content has-text-centered">
+              <p class="subtitle is-6">BC</p>
+              <video controls muted preload playsinline width="75%">
+                <source src="./static/videos/demo-videos/BC-nondrop-scene3.mp4" type="video/mp4">
+              </video>
+            </div>
+          </div>
+          
 
   </div>
 </section>
